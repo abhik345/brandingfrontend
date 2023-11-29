@@ -6,14 +6,25 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [isFullWidth, setIsFullWidth] = useState();
-
-  useEffect(() => {
-    toggleFullWidth()
-  },[])
-  const toggleFullWidth = () => {
-    setIsFullWidth(document.body.classList.toggle("layout-fullwidth"));
-  };
+    const [isFullWidth, setIsFullWidth] = useState(false);
+  
+    useEffect(() => {
+      const handleDOMContentLoaded = () => {
+        const body = document.body;
+        setIsFullWidth(body.classList.contains("layout-fullwidth"));
+      };
+      document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
+      return () => {
+        document.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
+      };
+    }, []);
+  
+    const toggleFullWidth = () => {
+      const body = document.body;
+      body.classList.toggle("layout-fullwidth", !isFullWidth);
+      setIsFullWidth(!isFullWidth);
+    };
+  
   return (
     <>
       <nav className="navbar navbar-fixed-top">
