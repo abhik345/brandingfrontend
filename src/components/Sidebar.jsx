@@ -8,8 +8,25 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const [activeItem, setActiveItem] = useState(null);
 
-  const handleLiClick = (index) => {
-    setActiveItem(index);
+  const toggleActiveClass = (index) => {
+    const currentActiveItem = document.querySelector(`#main-menu > li:nth-child(${index + 1})`);
+    if (currentActiveItem) {
+      currentActiveItem.classList.toggle("active");
+    }
+  };
+
+  const handleClick = (index) => {
+    setActiveItem(index, () => {
+      setTimeout(() => {
+        const currentActiveItem = document.querySelector(`#main-menu > li:nth-child(${index + 1})`);
+        if (currentActiveItem) {
+          const hasActiveClass = currentActiveItem.classList.contains("active");
+          if (!hasActiveClass) {
+            toggleActiveClass(index);
+          }
+        }
+      }, 0);
+    });
   };
 
   return (
@@ -72,17 +89,20 @@ const Sidebar = () => {
                     className={activeItem === 0 ? "active" : ""}
                     style={{ marginBottom: "10px" }}
                   >
-                    <Link to="/home" onClick={() => handleLiClick(0)}>
+                    <Link
+                      to="/home"
+                      onClick={() => handleClick(0)}
+                    >
                       <i className="fa fa-dashboard" />
                       <span>Dashboard</span>
                     </Link>
                   </li>
-                  <li className={activeItem === 1 ? "active" : ""}>
+                  <li
+                    className={activeItem === 1 ? "active" : ""}
+                  >
                     <Link
                       to="/create-master"
-                      onClick={() => {
-                        handleLiClick(0);
-                      }}
+                      onClick={() => handleClick(1)}
                     >
                       <i className="fa fa-puzzle-piece" />
                       <span>Create Master</span>
@@ -99,3 +119,5 @@ const Sidebar = () => {
 };
 
 export { Sidebar };
+
+
