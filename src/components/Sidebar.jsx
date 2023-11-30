@@ -89,17 +89,12 @@ const Sidebar = () => {
                     className={activeItem === 0 ? "active" : ""}
                     style={{ marginBottom: "10px" }}
                   >
-                    <Link
-                      to="/home"
-                      onClick={() => handleClick(0)}
-                    >
+                    <Link to="/home" onClick={() => handleClick(0)}>
                       <i className="fa fa-dashboard" />
                       <span>Dashboard</span>
                     </Link>
                   </li>
-                  <li
-                    className={activeItem === 1 ? "active" : ""}
-                  >
+                  <li className={activeItem === 1 ? "active" : ""}>
                     <Link
                       to="/create-master"
                       onClick={() => handleClick(1)}
@@ -107,7 +102,25 @@ const Sidebar = () => {
                       <i className="fa fa-puzzle-piece" />
                       <span>Create Master</span>
                     </Link>
+                    <ul>
+                      <li>
+                        <Link to="/create-category">Create Category</Link>
+                      </li>
+                      <li>
+                        <Link to="/create-location">Create Location</Link>
+                      </li>
+                      <li>
+                        <a href="ui-buttons.html">Buttons</a>
+                      </li>
+                      <li>
+                        <a href="ui-bootstrap.html">Bootstrap UI</a>
+                      </li>
+                      <li>
+                        <a href="ui-icons.html">Icons</a>
+                      </li>
+                    </ul>
                   </li>
+                  
                 </ul>
               </nav>
             </div>
