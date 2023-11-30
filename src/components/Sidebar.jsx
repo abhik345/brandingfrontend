@@ -120,10 +120,10 @@ const Sidebar = () => {
                     </ul>
                   </li>
                   <li
-                    className={activeItem === 0 ? "active" : ""}
+                    className={activeItem === 2 ? "active" : ""}
                     style={{ marginBottom: "10px" }}
                   >
-                    <Link to="/create-user" onClick={() => handleClick(0)}>
+                    <Link to="/create-user" onClick={() => handleClick(2)}>
                       <i className="fa fa-dashboard" />
                       <span>Create User</span>
                     </Link>
