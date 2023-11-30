@@ -10,7 +10,8 @@ const BreadCrumb = () => {
     "/all-assignment": "Assignment List",
     "/create-category" : "Category",
     "/create-location" : "Location",
-    "/create-user" : "Create User"
+    "/create-user" : "Create User",
+    "/create-subcategory" : "Create Subcategory"
   };
 
   const pathname = location.pathname;

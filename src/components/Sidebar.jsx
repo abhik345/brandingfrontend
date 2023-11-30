@@ -2,10 +2,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
-  const navigate = useNavigate();
   const [activeItem, setActiveItem] = useState(null);
 
   const toggleActiveClass = (index) => {
@@ -111,7 +109,7 @@ const Sidebar = () => {
                         <Link to="/create-location">Create Location</Link>
                       </li>
                       <li>
-                        <a href="ui-buttons.html">Buttons</a>
+                        <Link to="/create-subcategory">Create Subcategory</Link>
                       </li>
                       <li>
                         <a href="ui-bootstrap.html">Bootstrap UI</a>

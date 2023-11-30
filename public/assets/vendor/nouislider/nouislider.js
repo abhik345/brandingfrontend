@@ -1,5 +1,6 @@
 /*! nouislider - 8.5.1 - 2016-04-24 16:00:29 */
 
+var target;
 (function (factory) {
 
     if ( typeof define === 'function' && define.amd ) {
@@ -23,6 +24,7 @@
 	'use strict';
 
 
+	
 	// Removes duplicates from an array.
 	function unique(array) {
 		return array.filter(function(a){

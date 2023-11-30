@@ -1,3 +1,5 @@
+/* eslint-disable no-unreachable */
+/* eslint-disable no-lone-blocks */
 /*!
  * Bootstrap Colorpicker v2.3.3
  * http://mjolnic.github.io/bootstrap-colorpicker/
