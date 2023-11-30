@@ -9,25 +9,29 @@ const Sidebar = () => {
   const [activeItem, setActiveItem] = useState(null);
 
   const toggleActiveClass = (index) => {
-    const currentActiveItem = document.querySelector(`#main-menu > li:nth-child(${index + 1})`);
+    const currentActiveItem = document.querySelector(
+      `#main-menu > li:nth-child(${index + 1})`
+    );
     if (currentActiveItem) {
       currentActiveItem.classList.toggle("active");
     }
   };
 
   const handleClick = (index) => {
-    setActiveItem(index, () => {
-      setTimeout(() => {
-        const currentActiveItem = document.querySelector(`#main-menu > li:nth-child(${index + 1})`);
-        if (currentActiveItem) {
-          const hasActiveClass = currentActiveItem.classList.contains("active");
-          if (!hasActiveClass) {
-            toggleActiveClass(index);
-          }
+    setActiveItem(index);
+    setTimeout(() => {
+      const currentActiveItem = document.querySelector(
+        `#main-menu > li:nth-child(${index + 1})`
+      );
+      if (currentActiveItem) {
+        const hasActiveClass = currentActiveItem.classList.contains("active");
+        if (!hasActiveClass) {
+          toggleActiveClass(index);
         }
-      }, 0);
-    });
+      }
+    }, 0);
   };
+  
 
   return (
     <>
@@ -95,10 +99,7 @@ const Sidebar = () => {
                     </Link>
                   </li>
                   <li className={activeItem === 1 ? "active" : ""}>
-                    <Link
-                      to="/create-master"
-                      onClick={() => handleClick(1)}
-                    >
+                    <Link to="/create-master" onClick={() => handleClick(1)}>
                       <i className="fa fa-puzzle-piece" />
                       <span>Create Master</span>
                     </Link>
@@ -120,7 +121,15 @@ const Sidebar = () => {
                       </li>
                     </ul>
                   </li>
-                  
+                  <li
+                    className={activeItem === 0 ? "active" : ""}
+                    style={{ marginBottom: "10px" }}
+                  >
+                    <Link to="/create-user" onClick={() => handleClick(0)}>
+                      <i className="fa fa-dashboard" />
+                      <span>Create User</span>
+                    </Link>
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -132,5 +141,3 @@ const Sidebar = () => {
 };
 
 export { Sidebar };
-
-
