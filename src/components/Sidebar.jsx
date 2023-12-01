@@ -112,7 +112,7 @@ const Sidebar = () => {
                         <Link to="/create-subcategory">Create Subcategory</Link>
                       </li>
                       <li>
-                        <a href="ui-bootstrap.html">Bootstrap UI</a>
+                        <Link to="/create-area">Create Area</Link>
                       </li>
                       <li>
                         <a href="ui-icons.html">Icons</a>

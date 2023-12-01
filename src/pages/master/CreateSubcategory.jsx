@@ -147,42 +147,46 @@ const CreateSubcategory = () => {
                 </h2>
               </div>
               <div className="body demo-card">
-                <div className="row clearfix">
+                <div
+                  className="row clearfix"
+                  style={{ display: "flex", alignItems: "center" }}
+                >
                   <div className="col-lg-4 col-md-12">
-                    <label style={{ fontSize: "18px", marginBottom: "10px" }}>
-                      Category Selection
-                    </label>
-                    <div className="c_multiselect">
-                      <select
-                        id="single-selection"
-                        name="single_selection"
-                        className="multiselect multiselect-custom"
-                        style={{
-                          width: "100%",
-                          padding: "10px",
-                          fontSize: "16px",
-                          borderRadius: "5px",
-                          backgroundColor: "#fff",
-                          color: "#555",
-                          border: "1px solid #ddd",
-                          cursor: "pointer",
-                          outline: "none",
-                        }}
-                        onChange={handleCategoryChange}
-                        value={selectedCategoryId}
-                      >
-                        <option value="0">Select a Category</option>
-                        {categoryData.map((category) => (
-                          <option
-                            key={category.category_id}
-                            value={category.category_id}
-                          >
-                            {category.category_name}
-                          </option>
-                        ))}
-                      </select>
+                    <div className="card" style={{ border: "none" }}>
+                      <label style={{ fontSize: "18px", marginBottom: "10px" }}>
+                        Category Selection
+                      </label>
+                      <div className="c_multiselect">
+                        <select
+                          id="single-selection"
+                          name="single_selection"
+                          className="multiselect multiselect-custom"
+                          style={{
+                            width: "100%",
+                            padding: "10px",
+                            fontSize: "16px",
+                            borderRadius: "5px",
+                            backgroundColor: "#fff",
+                            color: "#555",
+                            border: "1px solid #ddd",
+                            cursor: "pointer",
+                            outline: "none",
+                          }}
+                          onChange={handleCategoryChange}
+                          value={selectedCategoryId}
+                        >
+                          <option value="0">Select a Category</option>
+                          {categoryData.map((category) => (
+                            <option
+                              key={category.category_id}
+                              value={category.category_id}
+                            >
+                              {category.category_name}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
                     </div>
-                    <p>{selectedCategoryId} category id is selected</p>
                   </div>
                   <div className="col-lg-8 col-md-12">
                     <div className="card">

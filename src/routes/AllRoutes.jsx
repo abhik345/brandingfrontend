@@ -4,6 +4,7 @@ import { Home, Login, PageNotFound,AssignmentListing,CreateMaster,CreateUser } f
 import { CreateCategory } from '../pages/master/CreateCategory';
 import CreateLocation from '../pages/master/CreateLocation';
 import CreateSubcategory from '../pages/master/CreateSubcategory';
+import CreateArea from '../pages/master/CreateArea';
 
 const AllRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const AllRoutes = () => {
         <Route path='/create-category' element={<CreateCategory/>}/>
         <Route path='/create-location' element={<CreateLocation/>}/>
         <Route path='/create-subcategory' element={<CreateSubcategory/>}/>
+        <Route path='/create-area' element={<CreateArea/>}/>
         <Route path='/create-master' element={<CreateMaster/>}/>
         <Route path='/create-user' element={<CreateUser/>}/>
         <Route path='/' element={<Login/>}/>

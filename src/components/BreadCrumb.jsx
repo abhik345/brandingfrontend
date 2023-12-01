@@ -8,10 +8,11 @@ const BreadCrumb = () => {
   const routeToPageName = {
     "/home": "Home",
     "/all-assignment": "Assignment List",
-    "/create-category" : "Category",
-    "/create-location" : "Location",
-    "/create-user" : "Create User",
-    "/create-subcategory" : "Create Subcategory"
+    "/create-category": "Category",
+    "/create-location": "Location",
+    "/create-user": "Create User",
+    "/create-subcategory": "Create Subcategory",
+    "/create-area": "Create Area",
   };
 
   const pathname = location.pathname;
