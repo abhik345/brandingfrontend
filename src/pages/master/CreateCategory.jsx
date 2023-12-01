@@ -12,7 +12,7 @@ const CreateCategory = () => {
 
   async function fetchCategory() {
     try {
-      const url = `${baseUrl}categories/`;
+      const url = `${baseUrl}categories/list`;
       const response = await axios.get(url);
       setCategoryData(response.data.data);
       return response.data;
