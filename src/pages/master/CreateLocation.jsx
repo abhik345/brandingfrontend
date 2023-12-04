@@ -27,7 +27,7 @@ const CreateLocation = () => {
 
   async function fetchLocation() {
     try {
-      const url = `${baseUrl}location/`;
+      const url = `${baseUrl}location/get`;
       const response = await axios.get(url);
       // console.log(response.data.data);
       setLocationData(response.data.data);

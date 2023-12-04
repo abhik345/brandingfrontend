@@ -29,7 +29,6 @@ const Sidebar = () => {
       }
     }, 0);
   };
-  
 
   return (
     <>
@@ -106,11 +105,12 @@ const Sidebar = () => {
                         <Link to="/create-category">Create Category</Link>
                       </li>
                       <li>
-                        <Link to="/create-location">Create Location</Link>
-                      </li>
-                      <li>
                         <Link to="/create-subcategory">Create Subcategory</Link>
                       </li>
+                      <li>
+                        <Link to="/create-location">Create Location</Link>
+                      </li>
+
                       <li>
                         <Link to="/create-area">Create Area</Link>
                       </li>
