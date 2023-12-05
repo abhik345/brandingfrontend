@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-import { Home, Login, PageNotFound,AssignmentListing,CreateMaster,CreateUser } from "../pages"
+import { Home, Login, PageNotFound,AssignmentListing,CreateMaster,CreateUser, User } from "../pages"
 import { CreateCategory } from '../pages/master/CreateCategory';
 import CreateLocation from '../pages/master/CreateLocation';
 import CreateSubcategory from '../pages/master/CreateSubcategory';
@@ -18,6 +18,7 @@ const AllRoutes = () => {
         <Route path='/create-location' element={<CreateLocation/>}/>
         <Route path='/create-subcategory' element={<CreateSubcategory/>}/>
         <Route path='/create-area' element={<CreateArea/>}/>
+        <Route path='/users' element={<User/>}/>
         <Route path='/create-master' element={<CreateMaster/>}/>
         <Route path='/create-user' element={<CreateUser/>}/>
         <Route path='/' element={<Login/>}/>

@@ -4,3 +4,4 @@ export { PageNotFound } from "./PageNotFound";
 export { AssignmentListing } from "./AssignmentListing";
 export { CreateMaster } from "./CreateMaster";
 export { CreateUser } from "./CreateUser";
+export { User } from "./User";

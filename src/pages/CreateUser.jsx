@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Layout } from "../components";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CreateUser = () => {
   const [formData, setFormData] = useState({
@@ -15,6 +16,7 @@ const CreateUser = () => {
     status: "false",
   });
 
+  const navigate = useNavigate();
   const [reenterPhoneNumber, setReenterPhoneNumber] = useState("");
   const handleReenterPhoneChange = (e) => {
     setReenterPhoneNumber(e.target.value);
@@ -75,9 +77,10 @@ const CreateUser = () => {
         }
       })
       console.log(response.data)
+      navigate("/users")
       return response.data
     } catch (error) {
-      
+      console.log(error)
     }
   
     
