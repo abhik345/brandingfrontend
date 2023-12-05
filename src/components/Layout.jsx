@@ -7,12 +7,12 @@ import { RightNavbar } from "./RightNavbar";
 const Layout = ({ children }) => {
   return (
     <>
-      <div id="wrapper" class="theme-cyan">
+      <div id="wrapper" className="theme-cyan">
         <Navbar />
         <Sidebar />
         <RightNavbar />
         <div id="main-content">
-          <div class="container-fluid">
+          <div className="container-fluid">
             <BreadCrumb />
             {children}
           </div>
