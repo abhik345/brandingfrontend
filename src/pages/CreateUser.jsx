@@ -40,14 +40,14 @@ const CreateUser = () => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     const maxSizeInBytes = 10 * 1024 * 1024;
-    
+  
     if (file) {
       if (file.size > maxSizeInBytes) {
         console.error("Image size exceeds the limit.");
       } else {
         const reader = new FileReader();
         reader.onload = (event) => {
-          const base64Data = event.target.result.split(",")[1];
+          const base64Data = event.target.result;
           setFormData({
             ...formData,
             profile_photo: base64Data,
@@ -58,33 +58,36 @@ const CreateUser = () => {
     }
   };
   
+  
 
   const baseUrl = "http://localhost:3001/api/";
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const data  = {
+      const data = {
         ...formData,
-        contact_number: formData.contact_number,
-      }
-      
+      };
+  console.log(data)
       const url = `${baseUrl}users/create`;
       const token = localStorage.getItem("token");
-      
-      const response = await axios.post(url,data,{
-        headers : {
-          Authorization : `Bearer ${token}`
-        }
-      })
-      console.log(response.data)
-      navigate("/users")
-      return response.data
-    } catch (error) {
-      console.log(error)
-    }
   
-    
+      const response = await axios.post(
+        url,
+        data,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response.data);
+      navigate("/users");
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
   };
+  
   
   return (
     <>
@@ -97,8 +100,8 @@ const CreateUser = () => {
               </div>
               <div className="body">
                 <form id="basic-form" noValidate onSubmit={handleSubmit}>
-                  <div class="row clearfix">
-                    <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div className="row clearfix">
+                    <div className="col-lg-6 col-md-6 col-sm-12">
                       <div className="form-group">
                         <label>First Name</label>
                         <input
@@ -111,7 +114,7 @@ const CreateUser = () => {
                         />
                       </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div className="col-lg-6 col-md-6 col-sm-12">
                       <div className="form-group">
                         <label>Last Name</label>
                         <input
