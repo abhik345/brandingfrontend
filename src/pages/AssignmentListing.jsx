@@ -1,14 +1,34 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Layout } from "../components";
+import axios from "axios";
 
 const AssignmentListing = () => {
+  const baseUrl = "http://localhost:3001/api/";
+  const [assignmentData, setAssignmentData] = useState([]);
+
+  const getAssignments = useCallback(async () => {
+    try {
+      const url = `${baseUrl}assignment/list`;
+      const response = await axios.get(url);
+      setAssignmentData(response.data.data)
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  },[]);
+  useEffect(() => {
+    getAssignments();
+  }, [getAssignments]);
+  console.log(assignmentData)
+  
   return (
     <>
       <Layout>
         <div className="row clearfix">
           <div className="col-lg-4 col-md-12">
-            <div className="card w_social2 overflowhidden">
+            {assignmentData.length > 0 && assignmentData?.map((assignment)=>(
+              <div className="card w_social2 overflowhidden">
               <div className="pw_img">
                 <img
                   className="img-fluid"
@@ -26,15 +46,15 @@ const AssignmentListing = () => {
                     />
                   </div>
                   <div className="content">
-                    <div>Title</div>
+                    <div>{assignment?.title}</div>
                     <h6>About</h6>
                   </div>
                 </div>
                 <div className="pw_meta">
                   <div className="row">
                     <div className="col-4">
-                      <h5>18K</h5>
-                      <small>Followers</small>
+                      <h5>{assignment?.created_by}</h5>
+                      <small>Created By</small>
                     </div>
                     <div className="col-4">
                       <h5>532</h5>
@@ -48,6 +68,8 @@ const AssignmentListing = () => {
                 </div>
               </div>
             </div>
+            ))}
+            
           </div>
         </div>
       </Layout>
