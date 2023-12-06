@@ -13,6 +13,7 @@ import {
   CreateMaster,
   CreateUser,
   User,
+  CreateVendor,
 } from "../pages";
 import { CreateCategory } from "../pages/master/CreateCategory";
 import CreateLocation from "../pages/master/CreateLocation";
@@ -93,6 +94,14 @@ const AllRoutes = () => {
             element={
               <ProtectedRoutes>
                 <CreateUser />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/create-vendor"
+            element={
+              <ProtectedRoutes>
+                <CreateVendor />
               </ProtectedRoutes>
             }
           />

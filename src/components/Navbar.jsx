@@ -6,25 +6,29 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
-    const [isFullWidth, setIsFullWidth] = useState(false);
-  
-    useEffect(() => {
-      const handleDOMContentLoaded = () => {
-        const body = document.body;
-        setIsFullWidth(body.classList.contains("layout-fullwidth"));
-      };
-      document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
-      return () => {
-        document.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
-      };
-    }, []);
-  
-    const toggleFullWidth = () => {
+  const [isFullWidth, setIsFullWidth] = useState(false);
+
+  useEffect(() => {
+    const handleDOMContentLoaded = () => {
       const body = document.body;
-      body.classList.toggle("layout-fullwidth", !isFullWidth);
-      setIsFullWidth(!isFullWidth);
+      setIsFullWidth(body.classList.contains("layout-fullwidth"));
     };
-  
+    document.addEventListener("DOMContentLoaded", handleDOMContentLoaded);
+    return () => {
+      document.removeEventListener("DOMContentLoaded", handleDOMContentLoaded);
+    };
+  }, []);
+
+  const toggleFullWidth = () => {
+    const body = document.body;
+    body.classList.toggle("layout-fullwidth", !isFullWidth);
+    setIsFullWidth(!isFullWidth);
+  };
+
+  const handleLogOut = () => {
+    localStorage.clear();
+  };
+
   return (
     <>
       <nav className="navbar navbar-fixed-top">
@@ -146,7 +150,7 @@ const Navbar = () => {
                   </ul>
                 </li>
                 <li>
-                  <Link to="/" className="icon-menu">
+                  <Link to="/" onClick={handleLogOut} className="icon-menu">
                     <i className="fa fa-power-off" />
                   </Link>
                 </li>

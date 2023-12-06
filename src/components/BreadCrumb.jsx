@@ -11,6 +11,7 @@ const BreadCrumb = () => {
     "/create-category": "Category",
     "/create-location": "Location",
     "/create-user": "Create User",
+    "/create-vendor" : "Create Vendor",
     "/create-subcategory": "Create Subcategory",
     "/create-area": "Create Area",
     "/users" : "Users List"

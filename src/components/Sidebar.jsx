@@ -132,7 +132,16 @@ const Sidebar = () => {
                     className={activeItem === 3 ? "active" : ""}
                     style={{ marginBottom: "10px" }}
                   >
-                    <Link to="/users" onClick={() => handleClick(3)}>
+                    <Link to="/create-vendor" onClick={() => handleClick(3)}>
+                      <i className="fa fa-dashboard" />
+                      <span>Create Vendor</span>
+                    </Link>
+                  </li>
+                  <li
+                    className={activeItem === 4 ? "active" : ""}
+                    style={{ marginBottom: "10px" }}
+                  >
+                    <Link to="/users" onClick={() => handleClick(4)}>
                       <i className="fa fa-dashboard" />
                       <span>User List</span>
                     </Link>
