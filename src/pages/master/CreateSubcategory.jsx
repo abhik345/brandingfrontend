@@ -289,17 +289,17 @@ const CreateSubcategory = () => {
       </Layout>
 
       {/* Modal */}
-      <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="title" id="defaultModalLabel">
+      <div className="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h4 className="title" id="defaultModalLabel">
                 {modalAction === "update"
                   ? "Update Category"
                   : "Delete Category"}
               </h4>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               {modalAction === "update" ? (
                 <>
                   <label>Category Name Write Here</label>
@@ -315,10 +315,10 @@ const CreateSubcategory = () => {
                 <p>Are you sure you want to delete this category?</p>
               )}
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class={
+                className={
                   modalAction === "update"
                     ? "btn btn-success"
                     : "btn btn-danger"
@@ -328,7 +328,7 @@ const CreateSubcategory = () => {
               >
                 {modalAction === "update" ? "SAVE CHANGES" : "DELETE"}
               </button>
-              <button type="button" class="btn btn-dark" data-dismiss="modal">
+              <button type="button" className="btn btn-dark" data-dismiss="modal">
                 CLOSE
               </button>
             </div>

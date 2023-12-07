@@ -14,6 +14,8 @@ import {
   CreateUser,
   User,
   CreateVendor,
+  Vendors,
+  CreateAssignments
 } from "../pages";
 import { CreateCategory } from "../pages/master/CreateCategory";
 import CreateLocation from "../pages/master/CreateLocation";
@@ -38,6 +40,14 @@ const AllRoutes = () => {
             element={
               <ProtectedRoutes>
                 <AssignmentListing />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/create-assignment"
+            element={
+              <ProtectedRoutes>
+                <CreateAssignments />
               </ProtectedRoutes>
             }
           />
@@ -78,6 +88,14 @@ const AllRoutes = () => {
             element={
               <ProtectedRoutes>
                 <User />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/vendors"
+            element={
+              <ProtectedRoutes>
+                <Vendors />
               </ProtectedRoutes>
             }
           />

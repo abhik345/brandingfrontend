@@ -95,7 +95,7 @@ const CreateLocation = () => {
   return (
     <>
       <Layout>
-        <div class="row clearfix">
+        <div className="row clearfix">
           <div className="col-md-12">
             <div className="card">
               <div className="header">
@@ -148,27 +148,27 @@ const CreateLocation = () => {
                         <td>
                           <button
                             type="button"
-                            class="btn btn-success "
+                            className="btn btn-success "
                             data-toggle="modal"
                             data-target="#defaultModal"
                             onClick={() =>
                               updateClick(locationItem?.location_id)
                             }
                           >
-                            <i class="fa fa-check-circle"></i> <span>Edit</span>
+                            <i className="fa fa-check-circle"></i> <span>Edit</span>
                           </button>
                         </td>
                         <td>
                           <button
                             type="button"
-                            class="btn btn-danger"
+                            className="btn btn-danger"
                             data-toggle="modal"
                             data-target="#defaultModal"
                             onClick={() =>
                               deleteClick(locationItem?.location_id)
                             }
                           >
-                            <i class="fa fa-trash-o"></i> <span>Delete</span>
+                            <i className="fa fa-trash-o"></i> <span>Delete</span>
                           </button>
                         </td>
                       </tr>
@@ -182,17 +182,17 @@ const CreateLocation = () => {
 
       {/* Modal */}
 
-      <div class="modal fade" id="defaultModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="title" id="defaultModalLabel">
+      <div className="modal fade" id="defaultModal" tabindex="-1" role="dialog">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h4 className="title" id="defaultModalLabel">
                 {modalAction === "update"
                   ? "Update Location"
                   : "Delete Location"}
               </h4>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               {modalAction === "update" ? (
                 <>
                   <label>Category Name Write Here</label>
@@ -208,10 +208,10 @@ const CreateLocation = () => {
                 <p>Are you sure you want to delete this location?</p>
               )}
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
                 type="button"
-                class={
+                className={
                   modalAction === "update"
                     ? "btn btn-success"
                     : "btn btn-danger"
@@ -221,7 +221,7 @@ const CreateLocation = () => {
               >
                 {modalAction === "update" ? "SAVE CHANGES" : "DELETE"}
               </button>
-              <button type="button" class="btn btn-dark" data-dismiss="modal">
+              <button type="button" className="btn btn-dark" data-dismiss="modal">
                 CLOSE
               </button>
             </div>

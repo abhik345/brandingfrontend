@@ -6,3 +6,5 @@ export { CreateMaster } from "./CreateMaster";
 export { CreateUser } from "./CreateUser";
 export { CreateVendor } from "./CreateVendor";
 export { User } from "./User";
+export { Vendors } from "./Vendors";
+export { CreateAssignments } from "./CreateAssignments";

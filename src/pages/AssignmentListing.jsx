@@ -28,7 +28,7 @@ const AssignmentListing = () => {
         <div className="row clearfix">
           <div className="col-lg-4 col-md-12">
             {assignmentData.length > 0 && assignmentData?.map((assignment)=>(
-              <div className="card w_social2 overflowhidden">
+              <div className="card w_social2 overflowhidden" key={assignment?.assignment_id}>
               <div className="pw_img">
                 <img
                   className="img-fluid"

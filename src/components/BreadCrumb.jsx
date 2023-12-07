@@ -14,7 +14,9 @@ const BreadCrumb = () => {
     "/create-vendor" : "Create Vendor",
     "/create-subcategory": "Create Subcategory",
     "/create-area": "Create Area",
-    "/users" : "Users List"
+    "/users" : "Users List",
+    "/vendors" : "Vendors List",
+    "/create-assignment" : "Create Assignments",
   };
 
   const pathname = location.pathname;
@@ -30,7 +32,10 @@ const BreadCrumb = () => {
                 <i className="fa fa-dashboard" />
               </a>
             </li>
-            <li className="breadcrumb-item">Dashboard</li>
+            {pageName === "Home" ? null : (
+              <li className="breadcrumb-item">Dashboard</li>
+            )}
+            
             <li className="breadcrumb-item active">{pageName}</li>
           </ul>
         </div>
@@ -50,7 +55,7 @@ const BreadCrumb = () => {
                 <button
                   type="button"
                   className="btn btn-primary"
-                  onClick={() => navigate("/all-assignment")}
+                  onClick={() => navigate("/create-assignment")}
                 >
                   <i className="fa fa-download" /> Create Assignment
                 </button>

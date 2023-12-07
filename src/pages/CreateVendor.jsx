@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { Layout } from '../components'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const CreateVendor = () => {
+  const navigate = useNavigate()
   const [formData,setFormData] = useState({
     first_name :"",
     last_name : "",
@@ -52,6 +54,7 @@ const CreateVendor = () => {
         }
       })
       console.log(response.data)
+      navigate("/vendors")
       return response.data
     } catch (error) {
       console.log(error)
