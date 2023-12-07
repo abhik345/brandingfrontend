@@ -12,7 +12,7 @@ const CreateUser = () => {
     identification_number: "",
     profile_photo: "",
     address: "",
-    user_type: "",
+    user_type_id: null,
     status: "false",
   });
 
@@ -33,7 +33,7 @@ const CreateUser = () => {
   const handleUserTypeChange = (e) => {
     setFormData({
       ...formData,
-      user_type: e.target.value,
+      user_type_id: e.target.value,
     });
   };
 
@@ -243,12 +243,12 @@ const CreateUser = () => {
                               cursor: "pointer",
                               outline: "none",
                             }}
-                            value={formData.user_type}
+                            value={formData.user_type_id}
                             onChange={handleUserTypeChange}
                           >
-                            <option value="0">Select a Category</option>
-                            <option value="user">User</option>
-                            <option value="Vendor" disabled>Vendor</option>
+                            <option value={0}>Select a Category</option>
+                            <option value={2}>User</option>
+                            <option value={3} disabled>Vendor</option>
                           </select>
                         </div>
                       </div>
