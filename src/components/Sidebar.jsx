@@ -30,6 +30,9 @@ const Sidebar = () => {
     }, 0);
   };
 
+  const type = localStorage.getItem("type")
+  
+
   return (
     <>
       <div id="left-sidebar" className="sidebar">
@@ -86,6 +89,7 @@ const Sidebar = () => {
             <div className="tab-pane active" id="menu">
               <nav id="left-sidebar-nav" className="sidebar-nav">
                 <ul id="main-menu" className="metismenu">
+                  
                   <li
                     className={activeItem === 0 ? "active" : ""}
                     style={{ marginBottom: "10px" }}
