@@ -28,11 +28,14 @@ const Login = () => {
         const { token } = response.data.data;
 
         if (response.data.data.user) {
-          const { users_serial_number } = response.data.data.user;
+          const { users_serial_number,user_type_id } = response.data.data.user;
           localStorage.setItem("user_id", users_serial_number);
+          localStorage.setItem("type", user_type_id === 1 ? "Admin" : (user_type_id === 2 ? "user" : "vendor"));
+
         } else if (response.data.data.vendor) {
-          const { vendor_id } = response.data.data.vendor;
+          const { vendor_id,user_type_id } = response.data.data.vendor;
           localStorage.setItem("vendor_id", vendor_id);
+          localStorage.setItem("type", user_type_id === 1 ? "Admin" : (user_type_id === 2 ? "user" : "vendor"));
         }
 
         localStorage.setItem("token", token);
