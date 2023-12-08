@@ -38,11 +38,11 @@ const Sidebar = () => {
         </button>
         <div className="sidebar-scroll">
           <div className="user-account">
-            <img
+            {/* <img
               src="assets/images/user.png"
               className="rounded-circle user-photo"
               alt="User Profile Picture"
-            />
+            /> */}
             <div className="dropdown">
               <span>Welcome,</span>
               <a
@@ -144,6 +144,33 @@ const Sidebar = () => {
                     <Link to="/users" onClick={() => handleClick(4)}>
                       <i className="fa fa-dashboard" />
                       <span>User List</span>
+                    </Link>
+                  </li>
+                  <li
+                    className={activeItem === 5 ? "active" : ""}
+                    style={{ marginBottom: "10px" }}
+                  >
+                    <Link to="/vendors" onClick={() => handleClick(5)}>
+                      <i className="fa fa-dashboard" />
+                      <span>Vendor List</span>
+                    </Link>
+                  </li>
+                  <li
+                    className={activeItem === 6 ? "active" : ""}
+                    style={{ marginBottom: "10px" }}
+                  >
+                    <Link to="/create-assignment" onClick={() => handleClick(6)}>
+                      <i className="fa fa-dashboard" />
+                      <span>Create Assignment</span>
+                    </Link>
+                  </li>
+                  <li
+                    className={activeItem === 7 ? "active" : ""}
+                    style={{ marginBottom: "10px" }}
+                  >
+                    <Link to="/all-assignment" onClick={() => handleClick(7)}>
+                      <i className="fa fa-dashboard" />
+                      <span>Assignment List</span>
                     </Link>
                   </li>
                 </ul>

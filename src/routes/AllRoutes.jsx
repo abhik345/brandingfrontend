@@ -15,7 +15,10 @@ import {
   User,
   CreateVendor,
   Vendors,
-  CreateAssignments
+  CreateAssignments,
+  VendorDetails,
+  UserDetails,
+  AssignmentDetails,
 } from "../pages";
 import { CreateCategory } from "../pages/master/CreateCategory";
 import CreateLocation from "../pages/master/CreateLocation";
@@ -40,6 +43,14 @@ const AllRoutes = () => {
             element={
               <ProtectedRoutes>
                 <AssignmentListing />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/all-assignment/:id"
+            element={
+              <ProtectedRoutes>
+                <AssignmentDetails />
               </ProtectedRoutes>
             }
           />
@@ -92,10 +103,26 @@ const AllRoutes = () => {
             }
           />
           <Route
+            path="/users/:id"
+            element={
+              <ProtectedRoutes>
+                <UserDetails />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
             path="/vendors"
             element={
               <ProtectedRoutes>
                 <Vendors />
+              </ProtectedRoutes>
+            }
+          />
+          <Route
+            path="/vendors/:id"
+            element={
+              <ProtectedRoutes>
+                <VendorDetails />
               </ProtectedRoutes>
             }
           />

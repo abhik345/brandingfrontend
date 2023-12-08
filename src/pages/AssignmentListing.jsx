@@ -2,11 +2,13 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Layout } from "../components";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AssignmentListing = () => {
   const baseUrl = "http://localhost:3001/api/";
   const [assignmentData, setAssignmentData] = useState([]);
 
+  const navigate = useNavigate();
   const getAssignments = useCallback(async () => {
     try {
       const url = `${baseUrl}assignment/list`;
@@ -20,7 +22,7 @@ const AssignmentListing = () => {
   useEffect(() => {
     getAssignments();
   }, [getAssignments]);
-  console.log(assignmentData)
+  // console.log(assignmentData)
   
   return (
     <>
@@ -28,7 +30,7 @@ const AssignmentListing = () => {
         <div className="row clearfix">
           <div className="col-lg-4 col-md-12">
             {assignmentData.length > 0 && assignmentData?.map((assignment)=>(
-              <div className="card w_social2 overflowhidden" key={assignment?.assignment_id}>
+              <div className="card w_social2 overflowhidden" key={assignment?.assignment_id} onClick={() => navigate(`/all-assignment/${assignment?.assignment_id}`) }>
               <div className="pw_img">
                 <img
                   className="img-fluid"

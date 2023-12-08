@@ -2,10 +2,12 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Layout } from "../components";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const User = () => {
   const baseUrl = "http://localhost:3001/api/";
   const [userData, setUserData] = useState([]);
+  const navigate = useNavigate();
   const getUsers = useCallback(async () => {
     try {
       const url = `${baseUrl}users/list`;
@@ -32,7 +34,10 @@ const User = () => {
         <div className="row clearfix">
           {userData.length > 0 ? (
             userData?.map((user) => (
-              <div className="col-lg-6 col-md-12" key={user?.users_serial_number}>
+              <div
+                className="col-lg-6 col-md-12"
+                key={user?.users_serial_number}
+              >
                 <div className="card w_profile">
                   <div className="body">
                     <div className="row">
@@ -47,9 +52,7 @@ const User = () => {
                           <strong>{user?.first_name}</strong> {user?.last_name}
                         </h4>
                         <span className="job_post">{user?.email_id}</span>
-                        <p>
-                          Contact Number : {user?.contact_number}
-                        </p>
+                        <p>Contact Number : {user?.contact_number}</p>
                         <div className="row">
                           <div className="col-4">
                             <h5>65</h5>
@@ -65,7 +68,12 @@ const User = () => {
                           </div>
                         </div>
                         <div className="m-t-15">
-                          <button className="btn btn-primary">
+                          <button
+                            className="btn btn-primary"
+                            onClick={() =>
+                              navigate(`/users/${user?.users_serial_number}`)
+                            }
+                          >
                             See Deatils
                           </button>
                         </div>

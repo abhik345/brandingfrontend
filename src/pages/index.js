@@ -8,3 +8,6 @@ export { CreateVendor } from "./CreateVendor";
 export { User } from "./User";
 export { Vendors } from "./Vendors";
 export { CreateAssignments } from "./CreateAssignments";
+export { VendorDetails } from "./VendorDetails";
+export { UserDetails } from "./UserDetails";
+export { AssignmentDetails } from "./AssignmentDetails";
