@@ -12,7 +12,6 @@ const Vendors = () => {
     try {
       const url = `${baseUrl}vendors/list`;
       const token = localStorage.getItem("token");
-
       const response = await axios.get(url, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -29,7 +28,7 @@ const Vendors = () => {
     getVendors();
   }, [getVendors]);
 
-  console.log(vendorData);
+  // console.log(vendorData);
   return (
     <Layout>
       <div className="row clearfix">
