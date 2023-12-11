@@ -140,6 +140,7 @@ const CreateAssignments = () => {
     e.preventDefault();
     try {
       const url = `${baseUrl}assignment/create`;
+      console.log(assignmentData)
       const response = await axios.post(url, assignmentData);
       navigate("/all-assignment");
       return response.data;

@@ -22,7 +22,6 @@ const CreateUser = () => {
     setReenterPhoneNumber(e.target.value);
   };
 
-  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -40,7 +39,7 @@ const CreateUser = () => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     const maxSizeInBytes = 10 * 1024 * 1024;
-  
+
     if (file) {
       if (file.size > maxSizeInBytes) {
         console.error("Image size exceeds the limit.");
@@ -57,8 +56,6 @@ const CreateUser = () => {
       }
     }
   };
-  
-  
 
   const baseUrl = "http://localhost:3001/api/";
   const handleSubmit = async (e) => {
@@ -67,19 +64,15 @@ const CreateUser = () => {
       const data = {
         ...formData,
       };
-  console.log(data)
+      console.log(data);
       const url = `${baseUrl}users/create`;
       const token = localStorage.getItem("token");
-  
-      const response = await axios.post(
-        url,
-        data,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+
+      const response = await axios.post(url, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       console.log(response.data);
       navigate("/users");
       return response.data;
@@ -87,8 +80,7 @@ const CreateUser = () => {
       console.log(error);
     }
   };
-  
-  
+
   return (
     <>
       <Layout>
@@ -219,9 +211,14 @@ const CreateUser = () => {
                     <div className="col-lg-6 col-md-6 col-sm-12">
                       <div className="form-group">
                         <label>Id Number</label>
-                        <input type="text" className="form-control" name="identification_number"
+                        <input
+                          type="text"
+                          className="form-control"
+                          name="identification_number"
                           value={formData.identification_number}
-                          onChange={handleChange} required />
+                          onChange={handleChange}
+                          required
+                        />
                       </div>
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-12">
@@ -248,7 +245,9 @@ const CreateUser = () => {
                           >
                             <option value={0}>Select a Category</option>
                             <option value={2}>User</option>
-                            <option value={3} disabled>Vendor</option>
+                            <option value={3} disabled>
+                              Vendor
+                            </option>
                           </select>
                         </div>
                       </div>
