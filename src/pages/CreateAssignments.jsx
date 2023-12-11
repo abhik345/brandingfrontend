@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Layout } from "../components";
+import { Layout,Loader } from "../components";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const CreateAssignments = () => {
   const navigate = useNavigate();
+  const [loading,setLoading] = useState(false)
   const [assignmentData, setAssignmentData] = useState({
     title: "",
     assignment_type_id: 0,
@@ -139,13 +140,16 @@ const CreateAssignments = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true)
       const url = `${baseUrl}assignment/create`;
       console.log(assignmentData)
       const response = await axios.post(url, assignmentData);
+      setLoading(false)
       navigate("/all-assignment");
       return response.data;
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
   return (

@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Layout } from '../components'
+import { Layout,Loader } from '../components'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const CreateVendor = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [loading,setLoading] = useState(false);
   const [formData,setFormData] = useState({
     first_name :"",
     last_name : "",
@@ -40,6 +41,7 @@ const CreateVendor = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true)
       const data = {
         ...formData,
         user_type_id: parseInt(formData.user_type_id, 10),
@@ -54,15 +56,18 @@ const CreateVendor = () => {
         }
       })
       console.log(response.data)
+      setLoading(false)
       navigate("/vendors")
       return response.data
     } catch (error) {
       console.log(error)
+      setLoading(false)
     }
   }
   return (
     <>
     <Layout>
+      {loading && <Loader/>}
     <div className="row clearfix">
           <div className="col-md-12">
             <div className="card">

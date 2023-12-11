@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layout } from "../components";
+import { Layout,Loader } from "../components";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -18,6 +18,7 @@ const CreateUser = () => {
 
   const navigate = useNavigate();
   const [reenterPhoneNumber, setReenterPhoneNumber] = useState("");
+  const [loading, setLoading] = useState(false);
   const handleReenterPhoneChange = (e) => {
     setReenterPhoneNumber(e.target.value);
   };
@@ -61,6 +62,7 @@ const CreateUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoading(true)
       const data = {
         ...formData,
       };
@@ -74,10 +76,12 @@ const CreateUser = () => {
         },
       });
       console.log(response.data);
+      setLoading(false)
       navigate("/users");
       return response.data;
     } catch (error) {
       console.log(error);
+      setLoading(false)
     }
   };
 
@@ -91,6 +95,7 @@ const CreateUser = () => {
                 <h2>Create User</h2>
               </div>
               <div className="body">
+              {loading && <Loader />} 
                 <form id="basic-form" noValidate onSubmit={handleSubmit}>
                   <div className="row clearfix">
                     <div className="col-lg-6 col-md-6 col-sm-12">

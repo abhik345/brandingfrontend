@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useCallback, useEffect, useState } from "react";
-import { Layout } from "../components";
+import { Layout,Loader } from "../components";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const User = () => {
   const baseUrl = "http://localhost:3001/api/";
   const [userData, setUserData] = useState([]);
+  
   const navigate = useNavigate();
   const getUsers = useCallback(async () => {
     try {
