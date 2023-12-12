@@ -8,7 +8,7 @@ const CreateCategory = () => {
   const [updatedCategory, setUpdatedCategory] = useState();
   const [selectedCategoryId, setSelectedCategoryId] = useState(null);
   const [modalAction, setModalAction] = useState("update"); 
-  const baseUrl = "http://localhost:3001/api/";
+  const baseUrl = process.env.REACT_APP_BASE_URL;
 
   async function fetchCategory() {
     try {

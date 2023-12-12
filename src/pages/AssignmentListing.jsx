@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const AssignmentListing = () => {
-  const baseUrl = "http://localhost:3001/api/";
+  const baseUrl = process.env.REACT_APP_BASE_URL;
   const [assignmentData, setAssignmentData] = useState([]);
 
   const navigate = useNavigate();

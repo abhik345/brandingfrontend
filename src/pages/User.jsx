@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const User = () => {
-  const baseUrl = "http://localhost:3001/api/";
+  const baseUrl = process.env.REACT_APP_BASE_URL;
   const [userData, setUserData] = useState([]);
   
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const User = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [baseUrl]);
 
   useEffect(() => {
     getUsers();

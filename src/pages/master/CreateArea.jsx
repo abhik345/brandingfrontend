@@ -11,7 +11,7 @@ const CreateArea = () => {
   const [ updatedArea, setUpdatedArea ] = useState("")
   const [areaData, setAreaData] = useState([]);
   const [modalAction, setModalAction] = useState("update");
-  const baseUrl = "http://localhost:3001/api/";
+  const baseUrl = process.env.REACT_APP_BASE_URL;
 
   // get location
 

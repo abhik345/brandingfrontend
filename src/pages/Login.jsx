@@ -7,8 +7,9 @@ const Login = () => {
   const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [open, setOpen] = useState(false);
+  
 
-  const baseUrl = "http://localhost:3001/api/";
+  const baseUrl = process.env.REACT_APP_BASE_URL;
 
   const handleSubmitLogin = async (e) => {
     e.preventDefault();

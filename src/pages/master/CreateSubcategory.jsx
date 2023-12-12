@@ -11,7 +11,7 @@ const CreateSubcategory = () => {
   const [updatedSubCategory, setUpdatedSubCategory] = useState();
   const [subcategory, setSubcategory] = useState("");
   const [modalAction, setModalAction] = useState("update");
-  const baseUrl = "http://localhost:3001/api/";
+  const baseUrl = process.env.REACT_APP_BASE_URL;
 
   //gettting the category
 

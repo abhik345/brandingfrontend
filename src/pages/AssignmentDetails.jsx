@@ -12,7 +12,7 @@ const AssignmentDetails = () => {
   const [vendorList, setVendorList] = useState([]);
   const [selectedVendorId, setSelectedVendorId] = useState(null);
   const [vendorDetails, setVendorDetails] = useState([]);
-  const baseUrl = "http://localhost:3001/api/";
+  const baseUrl = process.env.REACT_APP_BASE_URL;
   const token = localStorage.getItem("token");
   const getAssignmentDetail = useCallback(async () => {
     try {

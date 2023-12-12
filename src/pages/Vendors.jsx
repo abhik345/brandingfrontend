@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Vendors = () => {
-  const baseUrl = "http://localhost:3001/api/";
+  const baseUrl = process.env.REACT_APP_BASE_URL;
   const navigate = useNavigate()
   const [vendorData, setVendorData] = useState([]);
 
@@ -22,7 +22,7 @@ const Vendors = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [baseUrl]);
 
   useEffect(() => {
     getVendors();

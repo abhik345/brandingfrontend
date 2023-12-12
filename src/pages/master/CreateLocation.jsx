@@ -8,7 +8,7 @@ const CreateLocation = () => {
   const [updatedLocation, setUpdatedLocation] = useState();
   const [selectedLocationId, setSelectedLocationId] = useState(null);
   const [modalAction, setModalAction] = useState("update");
-  const baseUrl = "http://localhost:3001/api/";
+  const baseUrl = process.env.REACT_APP_BASE_URL;
   const handleSubmitLocation = async (e) => {
     e.preventDefault();
     try {

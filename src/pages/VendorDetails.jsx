@@ -6,7 +6,7 @@ import axios from "axios";
 const VendorDetails = () => {
   const { id } = useParams();
   const [VendorDeatils, setVendorDetails] = useState([]);
-  const baseUrl = "http://localhost:3001/api/";
+  const baseUrl = process.env.REACT_APP_BASE_URL;
 
   const getVendorDetails = useCallback(async () => {
     try {
@@ -22,7 +22,7 @@ const VendorDetails = () => {
     } catch (error) {
       console.log(error);
     }
-  }, [id]);
+  }, [id,baseUrl]);
 
   useEffect(() => {
     getVendorDetails();

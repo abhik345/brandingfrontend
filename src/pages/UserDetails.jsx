@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 const UserDetails = () => {
   const { id } = useParams();
-  const baseUrl = "http://localhost:3001/api/";
+  const baseUrl = process.env.REACT_APP_BASE_URL;
   const [userDetailsData, setUserDetailsData] = useState([]);
   const getUserDetails = useCallback(async () => {
     const url = `${baseUrl}users/list/${id}`;
@@ -17,7 +17,7 @@ const UserDetails = () => {
     });
     setUserDetailsData(response.data.data);
     return response.data;
-  }, [id]);
+  }, [id,baseUrl]);
 
   useEffect(() => {
     getUserDetails();

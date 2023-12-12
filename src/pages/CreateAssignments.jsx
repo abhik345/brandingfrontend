@@ -26,7 +26,7 @@ const CreateAssignments = () => {
   const [categoryData, setCategoryData] = useState([]);
   const [subCategoryData, setSubcategoryData] = useState([]);
   const [bannerTypeData, setBannerTypeData] = useState([]);
-  const baseUrl = "http://localhost:3001/api/";
+  const baseUrl = process.env.REACT_APP_BASE_URL;
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
