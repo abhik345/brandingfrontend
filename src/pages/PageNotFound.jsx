@@ -8,7 +8,17 @@ const PageNotFound = () => {
         <div className="vertical-align-middle auth-main">
           <div className="auth-box">
             <div className="top">
-              <img src="assets/images/logo-white.svg" alt="Iconic" />
+              {/* <img src="assets/images/logo-white.svg" alt="Iconic" /> */}
+              <h4
+                  className=""
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: "bold",
+                    color: "white",
+                  }}
+                >
+                  BrandMate
+                </h4>
             </div>
             <div className="card">
               <div className="header">

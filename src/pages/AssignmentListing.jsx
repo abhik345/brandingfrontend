@@ -18,7 +18,7 @@ const AssignmentListing = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [baseUrl]);
   useEffect(() => {
     getAssignments();
   }, [getAssignments]);

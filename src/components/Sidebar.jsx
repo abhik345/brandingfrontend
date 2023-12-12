@@ -30,7 +30,8 @@ const Sidebar = () => {
     }, 0);
   };
 
-  const type = localStorage.getItem("type")
+  const type = localStorage.getItem("type");
+  // console.log(type)
   
 
   return (

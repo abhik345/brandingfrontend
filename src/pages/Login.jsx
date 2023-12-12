@@ -194,7 +194,7 @@ const Login = () => {
                       >
                         Reset Password
                       </button>
-                      <div className="bottom">
+                      <div className="bottom" style={{cursor : "pointer"}}>
                         <span>
                           Don't have an account?
                           <span onClick={handleReset}>Back to LOGIN</span>

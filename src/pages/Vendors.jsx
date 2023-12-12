@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Layout } from "../components";
+import { Layout, Loader } from "../components";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -75,7 +75,7 @@ const Vendors = () => {
             </div>
           ))
         ) : (
-          <p>No user Data Is Available</p>
+          <Loader/>
         )}
       </div>
     </Layout>

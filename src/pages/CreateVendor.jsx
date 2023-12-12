@@ -200,7 +200,7 @@ const CreateVendor = () => {
                             value={formData.user_type_id}
                             onChange={(e) => handleUserTypeChange(e)}
                           >
-                            <option value={0}>Select a Category</option>
+                            <option value={0}>Select a Type</option>
                             <option value={2} disabled>User</option>
                             <option value={3} >Vendor</option>
                           </select>

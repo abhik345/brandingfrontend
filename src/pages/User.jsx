@@ -85,7 +85,7 @@ const User = () => {
               </div>
             ))
           ) : (
-            <p>No user Data Is Available</p>
+            <Loader/>
           )}
         </div>
       </Layout>
