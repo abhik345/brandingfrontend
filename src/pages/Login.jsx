@@ -28,7 +28,6 @@ const Login = () => {
       // console.log(response.data);
       if (response.data.success === 1) {
         const { token } = response.data.data;
-
         if (response.data.data.user) {
           const { users_serial_number, user_type_id } = response.data.data.user;
           localStorage.setItem("user_id", users_serial_number);

@@ -6,7 +6,7 @@ import axios from "axios";
 
 const AssignmentDetails = () => {
   const { id } = useParams();
-
+console.log(id)
   const [assignmentDetails, setAssignmentDetails] = useState([]);
   const [loading, setLoading] = useState(false);
   const [vendorList, setVendorList] = useState([]);
@@ -18,7 +18,7 @@ const AssignmentDetails = () => {
     try {
       setLoading(true);
       const url = `${baseUrl}assignment/list/${id}`;
-
+console.log(url)
       const response = await axios.get(url, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -31,7 +31,7 @@ const AssignmentDetails = () => {
       console.log(error);
       setLoading(false);
     }
-  }, [id, token]);
+  }, [id, token,baseUrl]);
 
   const getVendors = useCallback(async () => {
     try {
@@ -46,7 +46,7 @@ const AssignmentDetails = () => {
     } catch (error) {
       throw error;
     }
-  }, [token]);
+  }, [token,baseUrl]);
   console.log(assignmentDetails)
 
   
@@ -90,7 +90,9 @@ const AssignmentDetails = () => {
     // getVendorDetails();
   }, [getAssignmentDetail, getVendors,]);
   
-  
+  const defaultImage = assignmentDetails?.banner_image;
+
+  console.log(defaultImage)
 
   return (
     <>
@@ -103,7 +105,7 @@ const AssignmentDetails = () => {
                 <div className="img-post">
                   <img
                     className="d-block img-fluid"
-                    src="assets/images/blog/blog-page-1.jpg"
+                    src={defaultImage.length > 0 && defaultImage ? `https://brandapi.kreativemachinez.in/${defaultImage[0]}` : "assets/images/blog/blog-page-1.jpg"}
                     alt="First slide"
                   />
                 </div>

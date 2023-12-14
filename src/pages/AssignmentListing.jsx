@@ -27,7 +27,7 @@ const AssignmentListing = () => {
   return (
     <>
       <Layout>
-        {/* <div className="row clearfix">
+        <div className="row clearfix">
           {assignmentData.length > 0 &&
             assignmentData?.map((assignment) => (
               <div
@@ -43,7 +43,7 @@ const AssignmentListing = () => {
                   <div className="pw_img">
                     <img
                       className="img-fluid"
-                      src="assets/images/auth_bg.jpg"
+                      src={`https://brandapi.kreativemachinez.in/${assignment?.banner_image[0]}`}
                       alt="About the"
                     />
                   </div>
@@ -81,8 +81,8 @@ const AssignmentListing = () => {
                 </div>
               </div>
             ))}
-        </div> */}
-        <div className="row clearfix">
+        </div>
+        {/* <div className="row clearfix">
           <div className="col-lg-12">
             <div className="card">
               <div className="header">
@@ -110,20 +110,6 @@ const AssignmentListing = () => {
                 >
                   Done
                 </button>
-                {/* <button
-                      type="button"
-                      className="btn mb-1 btn-simple btn-sm btn-info btn-filter mr-2"
-                      data-target="pending"
-                    >
-                      Pending
-                    </button>
-                    <button
-                      type="button"
-                      className="btn mb-1 btn-simple btn-sm btn-danger btn-filter mr-2"
-                      data-target="blocked"
-                    >
-                      Blocked
-                    </button> */}
                 <div className="table-responsive m-t-20">
                   <table className="table table-filter table-hover mb-0">
                     <tbody>
@@ -169,77 +155,14 @@ const AssignmentListing = () => {
                           </td>
                         </tr>
                       ))}
-                      {/* <tr data-status="suspended">
-                            <td>2</td>
-                            <td>
-                              <div className="media-object">
-                                <img
-                                  src="assets/images/xs/avatar2.jpg"
-                                  alt=""
-                                  width="35px"
-                                  className="rounded-circle"
-                                />
-                              </div>
-                            </td>
-                            <td>charlotte</td>
-                            <td>a.charlotte@gnail.com</td>
-                            <td>
-                              <div className="progress progress-xs">
-                                <div
-                                  className="progress-bar l-amber"
-                                  role="progressbar"
-                                  aria-valuenow={45}
-                                  aria-valuemin={0}
-                                  aria-valuemax={100}
-                                  style={{ width: "45%" }}
-                                />
-                              </div>
-                            </td>
-                            <td>
-                              <span className="badge badge-warning">
-                                Suspended
-                              </span>
-                            </td>
-                          </tr>
-                          <tr data-status="blocked">
-                            <td>3</td>
-                            <td>
-                              <div className="media-object">
-                                <img
-                                  src="assets/images/xs/avatar3.jpg"
-                                  alt=""
-                                  width="35px"
-                                  className="rounded-circle"
-                                />
-                              </div>
-                            </td>
-                            <td>grayson</td>
-                            <td>grayson@yahoo.com</td>
-                            <td>
-                              <div className="progress progress-xs">
-                                <div
-                                  className="progress-bar l-coral"
-                                  role="progressbar"
-                                  aria-valuenow={16}
-                                  aria-valuemin={0}
-                                  aria-valuemax={100}
-                                  style={{ width: "16%" }}
-                                />
-                              </div>
-                            </td>
-                            <td>
-                              <span className="badge badge-danger">
-                                Blocked
-                              </span>
-                            </td>
-                          </tr> */}
+                     
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </Layout>
     </>
   );

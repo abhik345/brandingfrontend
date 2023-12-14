@@ -45,7 +45,7 @@ const User = () => {
                       <div className="col-lg-4 col-md-4 col-12">
                         <div className="profile-image float-md-right">
                           {" "}
-                          <img src="assets/images/user.png" alt="" />{" "}
+                          <img src={`https://brandapi.kreativemachinez.in/${user?.profile_photo}`} alt="" />{" "}
                         </div>
                       </div>
                       <div className="col-lg-8 col-md-8 col-12">
