@@ -27,6 +27,7 @@ const CreateAssignments = () => {
   const [subCategoryData, setSubcategoryData] = useState([]);
   const [bannerTypeData, setBannerTypeData] = useState([]);
   const baseUrl = process.env.REACT_APP_BASE_URL;
+ 
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -66,7 +67,7 @@ const CreateAssignments = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [baseUrl]);
 
   const getAssignmentType = useCallback(async () => {
     try {
@@ -77,7 +78,7 @@ const CreateAssignments = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [baseUrl]);
 
   const getArea = useCallback(async () => {
     try {
@@ -88,7 +89,7 @@ const CreateAssignments = () => {
     } catch (error) {
       console.log(error);
     }
-  }, [assignmentData]);
+  }, [assignmentData,baseUrl]);
 
   const getCategory = useCallback(async () => {
     try {
@@ -99,7 +100,7 @@ const CreateAssignments = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [baseUrl]);
 
   const getSubCategory = useCallback(async () => {
     try {
@@ -110,7 +111,7 @@ const CreateAssignments = () => {
     } catch (error) {
       console.log(error);
     }
-  }, [assignmentData]);
+  }, [assignmentData,baseUrl]);
   const getBannerType = useCallback(async () => {
     try {
       const url = `${baseUrl}banner-type/get`;
@@ -120,7 +121,7 @@ const CreateAssignments = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [baseUrl]);
   useEffect(() => {
     getLocation();
     getAssignmentType();
@@ -155,6 +156,7 @@ const CreateAssignments = () => {
   return (
     <>
       <Layout>
+        {loading && <Loader/>}
         <div className="row clearfix">
           <div className="col-md-12">
             <div className="card">
