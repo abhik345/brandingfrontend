@@ -27,6 +27,7 @@ const CreateAssignments = () => {
   const [subCategoryData, setSubcategoryData] = useState([]);
   const [bannerTypeData, setBannerTypeData] = useState([]);
   const baseUrl = process.env.REACT_APP_BASE_URL;
+  
  
 
   const handleFileChange = (e) => {
@@ -61,6 +62,7 @@ const CreateAssignments = () => {
   const getLocation = useCallback(async () => {
     try {
       const url = `${baseUrl}location/get`;
+      console.log(url)
       const response = await axios.get(url);
       setLocationData(response.data.data);
       return response.data;
@@ -145,6 +147,7 @@ const CreateAssignments = () => {
       const url = `${baseUrl}assignment/create`;
       console.log(assignmentData)
       const response = await axios.post(url, assignmentData);
+      console.log(response.data.message)
       setLoading(false)
       navigate("/all-assignment");
       return response.data;

@@ -10,6 +10,7 @@ const Login = () => {
   
 
   const baseUrl = process.env.REACT_APP_BASE_URL;
+  console.log(baseUrl)
 
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
@@ -19,13 +20,14 @@ const Login = () => {
         return;
       }
       const url = `${baseUrl}commonlogin/login`;
+      console.log(url)
       const data = {
         userName: userName,
         password: password,
       };
 
       const response = await axios.post(url, data);
-      // console.log(response.data);
+      console.log(response.data);
       if (response.data.success === 1) {
         const { token } = response.data.data;
         if (response.data.data.user) {
