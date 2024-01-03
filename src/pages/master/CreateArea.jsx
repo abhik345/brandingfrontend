@@ -25,7 +25,7 @@ const CreateArea = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [baseUrl]);
 
   const handleLocationChange = (e) => {
     setSelectedLocationId(e.target.value);

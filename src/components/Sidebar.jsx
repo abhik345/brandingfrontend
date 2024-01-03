@@ -119,13 +119,17 @@ const Sidebar = () => {
                       <li>
                         <Link to="/create-area">Create Area</Link>
                       </li>
+                      <li>
+                        <Link to="/create-places">Create Places</Link>
+                      </li>
+
                       {/* <li>
                         <a href="ui-icons.html">Icons</a>
                       </li> */}
                     </ul>
                   </li>
                   <li
-                    className={activeItem === 2 ? "active" : ""}
+                      className={activeItem === 2 ? "active" : ""}
                     style={{ marginBottom: "10px" }}
                   >
                     <Link to="/create-user" onClick={() => handleClick(2)}>

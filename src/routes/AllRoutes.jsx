@@ -24,6 +24,7 @@ import { CreateCategory } from "../pages/master/CreateCategory";
 import CreateLocation from "../pages/master/CreateLocation";
 import CreateSubcategory from "../pages/master/CreateSubcategory";
 import CreateArea from "../pages/master/CreateArea";
+import CreatePlaces from "../pages/master/CreatePlaces";
 
 const AllRoutes = () => {
   return (
@@ -150,6 +151,14 @@ const AllRoutes = () => {
               </ProtectedRoutes>
             }
           />
+            <Route
+                path="/create-places"
+                element={
+                    <ProtectedRoutes>
+                        <CreatePlaces />
+                    </ProtectedRoutes>
+                }
+            />
           <Route path="/" element={<Login />} />
           <Route
             path="*"
